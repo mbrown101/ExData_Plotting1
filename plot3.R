@@ -25,11 +25,12 @@ data[,9] <- as.numeric(data[,9])
 dts <- strptime(data[,10] , format = "%d/%m/%Y %H:%M:%S")
 data1 <- cbind(data , dts)
 
-
+par(cex=.65)
+par(mar=c(5.1,5.1,4.1,2.1))
 plot(data1[,11] , data1[,7] ,  type = 'l' , ylab = 'Energy sub metering' , xlab = '' , col = "black" )
 lines(data1[,11] , data1[,8], col = "red") 
 lines(data1[,11] , data1[,9] , col = "blue")
-legend("topright",  bty = "y",lwd=1,  pt.cex = 0.2 , y.intersp=.9, col = c("black" , "blue", "red"), legend = c("Sub_Metering_1", "Sub_Metering_2" , "Sub_Metering_3"))
+legend("topright",  bty = "y",lwd=1,  pt.cex = 0.2 , y.intersp=.9, col = c("black" , "blue", "red"), legend = c("Sub_Metering_1      ", "Sub_Metering_2      " , "Sub_Metering_3      "))
 
 dev.copy(device=png,"plot3.png" , width = 480, height = 480)
 dev.off()
